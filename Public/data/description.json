@@ -1,0 +1,136 @@
+{
+  "id": "pulse-watchlist",
+  "name": "Watchlist",
+  "topologyName": "WatchlistTopology",
+  "version": "0.3",
+  "url": "",
+  "description": "Watchlist Application",
+  "manager": "pulse-watchlist-manager",
+  "managerPort": 8000,
+  "managerExtraParameters": "db.sql",
+  "configuration": {
+    "cameraInputAddress": {
+      "type": "string",
+      "description": "URL of the camera streaming or input video."
+    },
+    "messageInputAddress": {
+      "type": "string",
+      "description": "Address where to bind a ZMQ PULL socket for receiving control messages. For internal use only.",
+      "default": ""
+    },
+    "alertsOutputAddress": {
+      "type": "string",
+      "description": "Address of the ZMQ SUB socket where to send the match alerts.",
+      "default": ""
+    },
+    "alertsOutputFormat": {
+      "type": "string",
+      "description": "Format of the alerts. This can be protobuf or json.",
+      "default": "protobuf"
+    },
+    "faceOutputAddress": {
+      "type": "string",
+      "description": "Address of the ZMQ SUB socket where to send the detection results.",
+      "default": ""
+    },
+    "rawVideoOutputAddress": {
+      "type": "string",
+      "description": "Address of the ZMQ SUB socket where to send the raw video.",
+      "default": ""
+    },
+    "rawVideoWidth": {
+      "type": "integer",
+      "description": "Width of the output video. 0 means the original width.",
+      "default": 640
+    },
+    "rawVideoHeight": {
+      "type": "integer",
+      "description": "Height of the output video. 0 means the original height.",
+      "default": 360
+    },
+    "__managerAddress": {
+      "type": "string",
+      "description": "Address of the ZMQ PULL socket of the watchlist manager. Automatically set by the scheduler.",
+      "default": ""
+    },
+    "__instanceId": {
+      "type": "string",
+      "description": "Instance ID. Automatically set by the scheduler.",
+      "default": ""
+    },
+    "alertsLogFile": {
+      "type": "string",
+      "description": "Path to the alert log file. Leave it empty to turn off logging.",
+      "default": ""
+    },
+    "alertsPictureLogPath": {
+      "type": "string",
+      "description": "Path to the folder where matched face pictures are stored. Pictures are not kept if the path is empty.",
+      "default": ""
+    },
+    "dbFile": {
+      "type": "string",
+      "description": "Path to a watchlist DB file. For internal use only.",
+      "default": ""
+    },
+    "faceDetectorProcesses": {
+      "type": "integer",
+      "description": "Number of parallel processes for face detection and feature extraction.",
+      "default": 4
+    },
+    "useFdex": {
+      "type": "boolean",
+      "description": "Enable/disable use of Fdex face detector. This should be set to true in most cases.",
+      "default": true
+    },
+    "enableAgeGender": {
+      "type": "boolean",
+      "description": "Enable/disable age/gender detector.",
+      "default": false
+    },
+    "trackingWindowSize": {
+      "type": "integer",
+      "description": "Number of subsequent frames used for tracking a face. Please keep it one for now.",
+      "default": 1
+    },
+    "maxFaces" : {
+      "type": "integer",
+      "description": "Maximum number of faces processed per frame",
+      "default": 15
+    },
+    "featureMatcherProcesses": {
+      "type": "integer",
+      "description": "Number of parallel processes for matching detected features.",
+      "default": 1
+    },
+    "matchScoreThreshold": {
+      "type": "number",
+      "description": "Matching threshold for considering two faces the same.",
+      "default": 0.6
+    },
+    "seenCacheSize": {
+      "type": "integer",
+      "description": "Number of entries to keep in cache for avoiding duplicate alerts.",
+      "default": 100
+    },
+    "seenCacheExpirationTimeout": {
+      "type": "integer",
+      "description": "Timeout (in seconds) for keeping a seen face in cache and avoid a duplicate alert.",
+      "default": 60
+    },
+    "longitude" : {
+      "type": "number",
+      "description": "Longitude of camera",
+      "default": 0.0
+    },
+    "latitude" : {
+      "type": "number",
+      "description": "Latitude of camera",
+      "default": 0.0
+    },
+    "neofaceConfiguration" : {
+      "include": "pulse-detectors-neoface",
+      "description": "NeoFace related configuration."
+    }
+  }
+}

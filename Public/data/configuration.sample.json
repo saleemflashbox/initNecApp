@@ -1,0 +1,28 @@
+{
+  "cameraInputAddress": "http://138.15.120.50/mjpg/1/video.mjpg",
+  "alertsOutputAddress": "tcp://184.73.236.160:4002",
+  "faceOutputAddress": "tcp://184.73.236.160:4002",
+  "rawVideoOutputAddress": "",
+  "rawVideoWidth": 640,
+  "rawVideoHeight": 360,
+  "alertsLogFile": "",
+  "alertsPictureLogPath": "",
+  "faceDetectorProcesses": 3,
+  "enableAgeGender": false,
+  "trackingWindowSize": 1,
+  "maxFaces": 10,
+  "featureMatcherProcesses": 1,
+  "matchScoreThreshold": 0.6,
+  "seenCacheSize": 100,
+  "seenCacheExpirationTimeout": 1,
+  "longitude": -74.595284,
+  "latitude": 40.359734,
+  "neofaceConfiguration": {
+    "eyes_max_width": 800,
+    "eyes_min_width": 20,
+    "reliability_threshold": 0.5,
+    "max_face_count": 15,
+    "max_face_roll": 30
+  }
+}
+

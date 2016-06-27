@@ -1,0 +1,8 @@
+{
+  "inputAddress": "rtsp://localhost:1234",
+  "outputAddress": "tcp://localhost:5678",
+  "detectorProcesses": 10,
+  "characterRecognition": {
+    "dataDirectory": "/data"
+  }
+}

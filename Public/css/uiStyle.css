@@ -1,0 +1,145 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    font-family: robotoregular;
+    background: #161825;
+    overflow-x: hidden;
+}
+
+#mainWrapper{
+    height: 100%;
+}
+
+#contWrapper{
+    min-height: 100%;
+    position: relative;
+}
+
+
+/*....... App header ........*/
+#appHeader{
+    /*box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);*/
+    padding: 30px 50px;
+    position: relative;
+    z-index: 200;
+    background: #1a1e2a;
+}
+#appHeader .leftCont{
+
+}
+#appHeader .logo{
+    margin-top: 7px;
+    width: 70px;
+}
+#appHeader .logo img{
+    height: auto;
+    width: 100%;
+    display: block;
+}
+
+#appHeader .rightCont{
+}
+#appHeader .notificationBtn{
+    margin-right: 75px;
+    background: #ec6e00;
+    color: #ffffff;
+    cursor: pointer;
+}
+#appHeader .notificationBtn .txt,
+#appHeader .notificationBtn .num{
+    padding: 6px 12px;
+}
+#appHeader .notificationBtn .num{
+    border-left: 2px solid #1a1e2b;
+}
+
+
+
+/*...... Login Section ........*/
+.loginMain {
+    /*position: absolute;*/
+    top: 76px;
+    bottom: 0;
+    width: 100%;
+    padding-top: 100px;
+}
+
+.loginMain .logTitle {
+    /*color: #122536;*/
+    color: #ffffff;
+}
+.loginMain .form li {
+    margin-bottom: 20px;
+}
+
+.loginMain .form input {
+    /*width: 100%;*/
+    /*background: #ffffff;*/
+    /*border-bottom: 2px solid #bbbbbb;*/
+    /*color: #717c99;*/
+}
+
+.loginMain .loginSec {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.loginMain .loginSec .loginBtn {
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    color: #ffffff;
+    /*background: #ef4b42;*/
+    background: #2e76ad;
+    cursor: pointer;
+    display: block;
+    border-bottom: none;
+    margin-top: 20px;
+    position: relative;
+
+    -webkit-transition: all ease-in 200ms;
+    -moz-transition: all ease-in 200ms;
+    -ms-transition: all ease-in 200ms;
+    -o-transition: all ease-in 200ms;
+    transition: all ease-in 200ms;
+}
+.loginMain .loginSec .loginBtn .loaderBar{
+    background: #2e76ad;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+}
+.loginMain .loginSec .loginBtn .loaderBar .circularMain {
+    margin-top: 7px;
+}
+.loginMain .signUp {
+    text-align: right;
+    margin-top: 5px;
+}
+
+.loginMain .userData {
+    text-align: left;
+    margin-top: 5px;
+}
+
+.loginMain .signUp a {
+    /*color:#122536;*/
+    color: #36b5f1;
+}
+
+/*........ pageCont ............*/
+#pageCont{
+    margin-left: 90px;
+}
+#pageCont.notify{
+    margin-right: 320px;
+}

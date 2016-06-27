@@ -1,0 +1,131 @@
+<div id="appHeader">
+    <div class="leftCont floatLeft">
+        <div class="logo">
+            <img src="images/NEC_Logo.png" alt="" class="nec midBlock">
+        </div>
+    </div>
+    <div class="rightCont floatRight roboLight" ng-controller="notificationController">
+        <div class="notificationBtn midBlock small" data-init="1">
+            <div class="txt midBlock">Notifications</div>
+            <div class="num midBlock">{{notificationDetails.notificationArrayLength}}</div>
+        </div>
+        <a href="#/admin/signIn" class="logout midBlock subNormal pointer">Logout</a>
+    </div>
+    <span class="clear"></span>
+</div>
+
+
+<div id="contWrapper">
+
+    <!--........ Side navigation bar ......-->
+    <div class="sideNavMain">
+        <ul class="sideNav roboLight smallest">
+            <li ng-class="{active: currentRout('necApp/overview')}" ng-click="setPageCode('Overview')">
+                <a href="#/necApp/overview">
+                    <img src="images/overview_inActive.png" alt="" class="icon inactive">
+                    <img src="images/overview_active.png" alt="" class="icon active">
+
+                    <div class="name">Overview</div>
+                </a>
+            </li>
+            <li ng-class="{active: currentRout('necApp/sensorMain')}" ng-click="setPageCode('Sensors')">
+                <a href="#/necApp/sensorMain/sensors">
+                    <img src="images/sensors_inActive.png" alt="" class="icon inactive">
+                    <img src="images/sensors_active.png" alt="" class="icon active">
+
+                    <div class="name">Sensors</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+
+    <!--......... app contents .........-->
+    <div id="pageCont" class="notify" ui-view></div>
+
+
+    <!--........ Notification list ........-->
+    <div class="notifications" ng-controller="notificationController">
+        <div class="searchBox marginBtmSml">
+            <div class="searchInput">
+                <input type="text" class="small" placeholder="Search">
+            </div>
+            <div class="searchBtn"></div>
+        </div>
+
+        <ul class="notificationList">
+            <li data-init="0">
+                <div class="symbol">
+                    <img src="images/yellowTri.png">
+                </div>
+                <div class=" notificationTxt small">
+                    <div class="">APN to device connection</div>
+                    <div class="roboLight marginTopShort">
+                        <div class="time">12:35 AM, 4.3.2016</div>
+                    </div>
+
+                    <div class="actionBtn small">
+                        <div class="btn notify midBlock">Notify</div>
+                        <div class="btn alert midBlock">Alert</div>
+                    </div>
+                </div>
+            </li>
+            <li data-init="0">
+                <div class="symbol">
+                    <img src="images/greenTri.png">
+                </div>
+                <div class=" notificationTxt small">
+                    <div class="">Generated device ID</div>
+                    <div class="roboLight marginTopShort">
+                        <div class="time">12:35 AM, 4.3.2016</div>
+                    </div>
+
+                    <div class="actionBtn small">
+                        <div class="btn notify midBlock">Notify</div>
+                        <div class="btn alert midBlock">Alert</div>
+                    </div>
+                </div>
+            </li>
+            <li data-init="0">
+                <div class="symbol">
+                    <img src="images/redTri.png">
+                </div>
+                <div class=" notificationTxt small">
+                    <div class="">New sensor (Camera) added</div>
+                    <div class="roboLight marginTopShort">
+                        <div class="time">12:35 AM, 4.3.2016</div>
+                    </div>
+
+                    <div class="actionBtn small">
+                        <div class="btn notify midBlock">Notify</div>
+                        <div class="btn alert midBlock">Alert</div>
+                    </div>
+                </div>
+            </li>
+            <li data-init="0">
+                <div class="symbol">
+                    <img src="images/greenTri.png">
+                </div>
+                <div class=" notificationTxt small">
+                    <div class="">Generated device ID</div>
+                    <div class="roboLight marginTopShort">
+                        <div class="time">12:35 AM, 4.3.2016</div>
+                    </div>
+
+                    <div class="actionBtn small">
+                        <div class="btn notify midBlock">Notify</div>
+                        <div class="btn alert midBlock">Alert</div>
+                    </div>
+                </div>
+            </li>
+            <span class="clear"></span>
+        </ul>
+    </div>
+
+</div>
+
+
+<!--...... transparent background for popups .........-->
+<div class="background"></div>
+
+

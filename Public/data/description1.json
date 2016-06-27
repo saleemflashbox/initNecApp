@@ -1,0 +1,245 @@
+{
+  "id": "pulse-anpr",
+  "name": "Automotive number plate recognition",
+  "version": "git157",
+  "description": "Automotive number plate recognition",
+  "url": "http://www.nec-labs.com/research-departments/integrated-systems/integrated-systems-home",
+  "topologyName": "PulseAnprTopology",
+  "licenseRequired": false,
+  "configuration": {
+    "structures": {
+      "Rectangle": {
+        "x": {
+          "description": "The leftmost point where to start the cropping.",
+          "type": "integer",
+          "default": -1
+        },
+        "y": {
+          "description": "The topmost point where to start the cropping.",
+          "type": "integer",
+          "default": -1
+        },
+        "width": {
+          "description": "The width of the cropping.",
+          "type": "integer",
+          "default": -1
+        },
+        "height": {
+          "description": "The height of the cropping.",
+          "type": "integer",
+          "default": -1
+        }
+      },
+      "CharacterRecognition": {
+        "dataDirectory": {
+          "description": "Directory where are store the samples for each character.",
+          "type": "string"
+        },
+        "numberOfPatches": {
+          "description": "Number of patches to subdivide each character template, it has to be a perfect square.",
+          "type": "integer",
+          "default": 16
+        },
+        "templateWidth": {
+          "description": "Width to which resize each character template, it has to be a multiple of sqrt(numberOfPatches).",
+          "type": "integer",
+          "default": 40
+        },
+        "templateHeight": {
+          "description": "Height to which resize each character template, it has to be a multiple of sqrt(numberOfPatches).",
+          "type": "integer",
+          "default": 60
+        }
+      },
+      "ImageThreshold": {
+        "useAdaptiveThreshold": {
+          "description": "Use adaptive or global threshold.",
+          "type": "bool",
+          "default": true
+        },
+        "globalThresholdValue": {
+          "description": "Intensity value above which a pixel is considered foreground.",
+          "type": "integer",
+          "default": 70
+        },
+        "adaptiveThresholdBlockSize": {
+          "description": "Size of a pixel neighborhood that is used to calculate a threshold value for the pixel.",
+          "type": "integer",
+          "default": 19
+        },
+        "adaptiveThresholdConstant": {
+          "description": "Constant subtracted from the mean or weighted mean.",
+          "type": "double",
+          "default": 5.0
+        }
+      },
+      "ObjectFilter": {
+        "minForegroundPixels": {
+          "type": "integer",
+          "description": "Minimum number of foreground pixels.",
+          "default": 100
+        },
+        "minAspectRatio": {
+          "type": "double",
+          "description": "Minimum component_width/component_height aspect ratio.",
+          "default": 0.15
+        },
+        "maxAspectRatio": {
+          "type": "double",
+          "description": "Maximum component_width/component_height aspect ratio.",
+          "default": 0.9
+        },
+        "minWidthRatio": {
+          "type": "double",
+          "description": "Minimum component_width/image_width ratio.",
+          "default": 0.007
+        },
+        "maxWidthRatio": {
+          "type": "double",
+          "description": "Maximum component_width/image_width ratio.",
+          "default": 0.075
+        },
+        "minHeightRatio": {
+          "type": "double",
+          "description": "Minimum component_height/image_height ratio.",
+          "default": 0.0175
+        },
+        "maxHeightRatio": {
+          "type": "double",
+          "description": "Maximum component_height/image_height ratio.",
+          "default": 0.1
+        }
+      },
+      "PlateDetector": {
+        "imageThreshold": {
+          "description": "Image threshold configuration.",
+          "type": "ImageThreshold"
+        },
+        "darkOnLightPlate": {
+          "description": "Set if the plates to detect are dark foreground on light background or vice versa.",
+          "type": "bool",
+          "default": true
+        },
+        "maxStrokeWidthScale": {
+          "description": "Set the max width scale of a single stroke, the max width of a stroke will be image_width *  maxStrokeWidthScale",
+          "type": "double",
+          "default": 0.025
+        },
+        "objectFilter": {
+          "description": "Configuration for filtering the detected object for character recognition.",
+          "type": "ObjectFilter"
+        },
+        "characterMargin": {
+          "type": "integer",
+          "description": "Margin in pixel between characters in the plate.",
+          "default": 3
+        },
+        "minCharacterPixels": {
+          "type": "integer",
+          "description": "Minimum number of foreground pixels on each character column.",
+          "default": 2
+        },
+        "minPlateLength": {
+          "description": "Minimum length of a plate in characters.",
+          "type": "integer",
+          "default": 5
+        },
+        "maxPlateLength": {
+          "description": "Maximum length of a plate in characters.",
+          "type": "integer",
+          "default": 8
+        },
+        "twoLinePlate": {
+          "description": "Detect license plate having two line.",
+          "type": "boolean",
+          "default": false
+        },
+        "maxCharactersAngle": {
+          "type": "double",
+          "description": "Maximum angle (tilt) between characters in degrees.",
+          "default": 5
+        },
+        "maxCharactersWidthDifference": {
+          "description": "Maximum difference (percentage) of the width for consecutive characters.",
+          "type": "double",
+          "default": 0.3
+        },
+        "maxCharactersHeightDifference": {
+          "description": "Maximum difference (percentage) of the height for consecutive characters.",
+          "type": "double",
+          "default": 0.3
+        }
+      },
+      "PlateValidation": {
+        "prefixRegex": {
+          "description": "Regular expression for matching the prefix of the plate.",
+          "type": "string",
+          "default": "SMB|TIB|SBS"
+        },
+        "infixRegex": {
+          "description": "Regular expression for matching the middle part of the plate.",
+          "type": "string",
+          "default": "([0-9]){2,4}"
+        },
+        "suffixRegex": {
+          "description": "Regular expression for matching the suffix of the plate.",
+          "type": "string",
+          "default": "A|Z|Y|X|U|T|S|R|P|M|L|K|J|H|G|E|D|C|B"
+        },
+        "checksumValidator": {
+          "description": "Use a checksum validator.",
+          "type": "string",
+          "default": "Singapore"
+        }
+      }
+    },
+    "inputAddress": {
+      "description": "URL of the input video.",
+      "type": "string"
+    },
+    "outputAddress": {
+      "description": "Address of the ZMQ PULL socket where to send the output.",
+      "type": "string"
+    },
+    "sendSnapshot": {
+      "description": "Send a snapshot of the detected plate along with the recognized plate.",
+      "type": "boolean",
+      "default": false
+    },
+    "metadata": {
+      "description": "Metadata to send along with the recognized plate.",
+      "type": "tuple",
+      "default": {}
+    },
+    "duplicateRetentionTime": {
+      "description": "Time (in seconds) to retain a detected plate for avoiding duplicated messages.",
+      "type": "integer",
+      "default": 60
+    },
+    "detectorProcesses": {
+      "description": "Number of parallel plate detection processes.",
+      "type": "integer"
+    },
+    "cropInput": {
+      "description": "Enable cropping of the input frames.",
+      "type": "boolean",
+      "default": false
+    },
+    "cropInputArea": {
+      "description": "Set the crop area of the input frames when cropping is enabled.",
+      "type": "Rectangle"
+    },
+    "characterRecognition": {
+      "description": "Characters recognition configuration.",
+      "type": "CharacterRecognition"
+    },
+    "plateDetector": {
+      "description": "Configuration for the plate detector.",
+      "type": "PlateDetector"
+    },
+    "plateValidation": {
+      "description": "Configuration for the validating the detected plate.",
+      "type": "PlateValidation"
+    }
+  }
+}
