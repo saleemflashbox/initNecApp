@@ -1,0 +1,19 @@
+{
+  "name": "initNecApp",
+  "homepage": "https://github.com/saleemflashbox/initNecApp",
+  "authors": [
+    "saleemflashbox <saleem@flashbox.in>"
+  ],
+  "description": "to initialise web apps for nec projects",
+  "main": "",
+  "svn": "1.0.0",
+  "git": "1.0.0",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
