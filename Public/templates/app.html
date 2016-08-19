@@ -4,10 +4,10 @@
             <img src="images/NEC_Logo.png" alt="" class="nec midBlock">
         </div>
     </div>
-    <div class="rightCont floatRight roboLight" ng-controller="notificationController">
-        <div class="notificationBtn midBlock small" data-init="1">
+    <div class="rightCont floatRight roboLight">
+        <div class="rippleEle notificationBtn midBlock small " data-init=1 >
             <div class="txt midBlock">Notifications</div>
-            <div class="num midBlock">{{notificationDetails.notificationArrayLength}}</div>
+            <div class="num midBlock">5</div>
         </div>
         <a href="#/admin/signIn" class="logout midBlock subNormal pointer">Logout</a>
     </div>
@@ -20,7 +20,7 @@
     <!--........ Side navigation bar ......-->
     <div class="sideNavMain">
         <ul class="sideNav roboLight smallest">
-            <li ng-class="{active: currentRout('necApp/overview')}" ng-click="setPageCode('Overview')">
+            <li ng-class="{active: currentRout('necApp/overview')}" ng-click="setPageCode('Overview')" class="rippleEle">
                 <a href="#/necApp/overview">
                     <img src="images/overview_inActive.png" alt="" class="icon inactive">
                     <img src="images/overview_active.png" alt="" class="icon active">
@@ -28,7 +28,7 @@
                     <div class="name">Overview</div>
                 </a>
             </li>
-            <li ng-class="{active: currentRout('necApp/sensorMain')}" ng-click="setPageCode('Sensors')">
+            <li ng-class="{active: currentRout('necApp/sensorMain')}" ng-click="setPageCode('Sensors')" class="rippleEle">
                 <a href="#/necApp/sensorMain/sensors">
                     <img src="images/sensors_inActive.png" alt="" class="icon inactive">
                     <img src="images/sensors_active.png" alt="" class="icon active">
@@ -45,11 +45,9 @@
 
 
     <!--........ Notification list ........-->
-    <div class="notifications" ng-controller="notificationController">
+    <div class="notifications">
         <div class="searchBox marginBtmSml">
-            <div class="searchInput">
-                <input type="text" class="small" placeholder="Search">
-            </div>
+            <input type="text" class="small" placeholder="Search">
             <div class="searchBtn"></div>
         </div>
 

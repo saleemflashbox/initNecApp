@@ -10,43 +10,85 @@ $(document).ready(function () {
             parentEle.on("click", "#appHeader .notificationBtn", function (e) {
                 e.stopPropagation();
                 var init = $(this).data("init");
+                // ...... UI style based function .......
+                if ($("body").hasClass("arabicUIStyle")){
+                    if (init == '0') {
 
-                if (init == '0') {
-
-                    $("#contWrapper #pageCont").animate({
-                        marginRight: "320px"
-                    }, 300, function () {
-                    });
-
-                    setTimeout(function () {
-                        $(".notifications").fadeIn(0, function () {
-                            $(".notifications").removeClass("bounceOutRightCustom").addClass("bounceInRightCustom");
+                        $("#contWrapper #pageCont").animate({
+                            marginLeft: "320px"
+                        }, 300, function () {
                         });
-                    }, 200);
 
-                    $(this).data({
-                        'init': '1'
-                    }).addClass("active");
+                        setTimeout(function () {
+                            $(".notifications").fadeIn(0, function () {
+                                $(".notifications").removeClass("bounceOutLeftCustom").addClass("bounceInLeftCustom");
+                            });
+                        }, 200);
 
+                        $(this).data({
+                            'init': '1'
+                        }).addClass("active");
+
+                    }
+                    else {
+
+                        $(".notifications").removeClass("bounceInLeftCustom").addClass("bounceOutLeftCustom");
+
+                        setTimeout(function () {
+                            $("#contWrapper #pageCont").animate({
+                                marginLeft: "0"
+                            }, 300);
+                        }, 300);
+
+                        $(this).data({
+                            'init': '0'
+                        }).removeClass("active");
+
+                        setTimeout(function () {
+                            $(".notifications").fadeOut(0)
+                        }, 500);
+                    }
                 }
                 else {
+                    if (init == '0') {
 
-                    $(".notifications").removeClass("bounceInRightCustom").addClass("bounceOutRightCustom");
-
-                    setTimeout(function () {
                         $("#contWrapper #pageCont").animate({
-                            marginRight: "0"
+                            marginRight: "320px"
+                        }, 300, function () {
+                        });
+
+                        setTimeout(function () {
+                            $(".notifications").fadeIn(0, function () {
+                                $(".notifications").removeClass("bounceOutRightCustom").addClass("bounceInRightCustom");
+                            });
+                        }, 200);
+
+                        $(this).data({
+                            'init': '1'
+                        }).addClass("active");
+
+                    }
+                    else {
+
+                        $(".notifications").removeClass("bounceInRightCustom").addClass("bounceOutRightCustom");
+
+                        setTimeout(function () {
+                            $("#contWrapper #pageCont").animate({
+                                marginRight: "0"
+                            }, 300);
                         }, 300);
-                    }, 300);
 
-                    $(this).data({
-                        'init': '0'
-                    }).removeClass("active");
+                        $(this).data({
+                            'init': '0'
+                        }).removeClass("active");
 
-                    setTimeout(function () {
-                        $(".notifications").fadeOut(0)
-                    }, 500);
+                        setTimeout(function () {
+                            $(".notifications").fadeOut(0)
+                        }, 500);
+                    }
                 }
+
+
 
             });
 
@@ -76,6 +118,102 @@ $(document).ready(function () {
                 $(this).parents().eq(2).addClass("notified");
             });
 
+        },
+        help: function () {
+            parentEle.on("click", ".needHelpBtn", function (e) {
+                e.stopPropagation();
+                var init = $(this).data("init");
+
+                if ($("body").hasClass("arabicUIStyle")){
+                    if (init == '0') {
+                        $(".helpBar").fadeIn(0, function () {
+                            $(".helpBar").removeClass("bounceOutLeftCustom").addClass("bounceInLeftCustom");
+                        });
+                        $(this).data({
+                            'init': '1'
+                        }).text("HIDE HELP");
+                    }
+                    else{
+                        $(".helpBar").removeClass("bounceInLeftCustom").addClass("bounceOutLeftCustom");
+                        setTimeout(function () {
+                            $(".helpBar").fadeOut(0)
+                        }, 500);
+                        $(this).data({
+                            'init': '0'
+                        }).text("SHOW HELP");
+
+                    }
+                }
+                else {
+                    if (init == '0') {
+                        $(".helpBar").fadeIn(0, function () {
+                            $(".helpBar").removeClass("bounceOutRightCustom").addClass("bounceInRightCustom");
+                        });
+                        $(this).data({
+                            'init': '1'
+                        }).text("HIDE HELP");
+                    }
+                    else{
+                        $(".helpBar").removeClass("bounceInRightCustom").addClass("bounceOutRightCustom");
+                        setTimeout(function () {
+                            $(".helpBar").fadeOut(0)
+                        }, 500);
+                        $(this).data({
+                            'init': '0'
+                        }).text("SHOW HELP");
+
+                    }
+                }
+            });
+            parentEle.on("click", ".helpBar .x", function (e) {
+                $(".helpBar").removeClass("bounceInRightCustom").addClass("bounceOutRightCustom");
+                setTimeout(function () {
+                    $(".helpBar").fadeOut(0)
+                }, 500);
+
+                $(".needHelpBtn").data({
+                    'init': '0'
+                }).text("NEED HELP");
+            });
+        },
+        ripple: function () {
+
+            parentEle.on("mousedown", ".rippleEle", function (e) {
+                var ele = $(this);
+
+                if (!ele.children().hasClass("rippleContainer")) {
+                    ele.append('<div class="rippleContainer"><span></span></div>')
+                }
+
+                var rippleMain = ele.children(".rippleContainer");
+
+                var left = (e.pageX) - (ele.offset().left);
+                var top = (e.pageY) - (ele.offset().top);
+                var r = $('<div class="ripple"></div>');
+                r.appendTo(rippleMain)
+                    .css({
+                        left: left,
+                        top: top
+                    })
+                    .css({
+                        "-ms-transform": "scale(" + 3 + ")",
+                        "-moz-transform": "scale(" + 3 + ")",
+                        "-webkit-transform": "scale(" + 3 + ")",
+                        transform: "scale(" + 3 + ")"
+                    })
+                    .addClass("on")
+                    .animate({
+                    width: 2 * Math.max(ele.outerWidth(), ele.outerHeight()),
+                    height: 2 * Math.max(ele.outerWidth(), ele.outerHeight()),
+                    "margin-left": -1 * Math.max(ele.outerWidth(), ele.outerHeight()),
+                    "margin-top": -1 * Math.max(ele.outerWidth(), ele.outerHeight()),
+                    opacity: .2
+                }, 500),
+                    setTimeout(function () {
+                        r.remove();
+                    }, 500);
+
+            });
         },
         dropDown: function () {
             parentEle.on("click", ".dropDown .headTitle ,.multiSelect .headTitle", function (e) {
@@ -155,27 +293,27 @@ $(document).ready(function () {
                 $(".messagePopup").fadeOut(100);
                 clearTimeout(setTime);
                 $(msgBox).fadeIn(200);
-                setTime=setTimeout(function () {
+                setTime = setTimeout(function () {
                     $(msgBox).fadeOut(200);
                 }, 3000);
             });
         },
         accordion: function () {
             parentEle.on("click", ".accordionSec .accordionHead", function (e) {
-                var init=$(this).data("init");
-                if (init=="0"){
+                var init = $(this).data("init");
+                if (init == "0") {
                     $(this).parent().addClass("expand");
                     $(this).parent().find("> .accordionContent").slideDown(300);
                     $(this).data({
-                        "init":"1"
+                        "init": "1"
                     });
                     $(this).find(".expandBtn").text("-");
                 }
-                else{
+                else {
                     $(this).parent().removeClass("expand");
                     $(this).parent().find(".accordionContent").slideUp(300);
                     $(this).data({
-                        "init":"0"
+                        "init": "0"
                     });
                     $(this).find(".expandBtn").text("+");
 
@@ -183,7 +321,7 @@ $(document).ready(function () {
                     $(this).parent().find(".accordionSec").removeClass("expand");
                     $(this).parent().find(".expandBtn").text("+");
                     $(this).parent().find(".accordionSec .accordionHead").data({
-                        "init":"0"
+                        "init": "0"
                     });
                 }
             });
@@ -215,8 +353,10 @@ $(document).ready(function () {
         }
     };
     fun.notificationList();
+    fun.help();
+    fun.ripple();
     fun.dropDown();
     fun.accordion();
-    fun.defaultClick();
-    fun.preventDefaultClicks();
+    // fun.defaultClick();
+    // fun.preventDefaultClicks();
 });

@@ -10,7 +10,7 @@ a {
 
 input {
     border: none;
-    /*color: #ffffff;*/
+    color: #ffffff;
     font-family: robotolight;
     outline: none;
 }
@@ -83,28 +83,41 @@ ul {
     font-family: robotothin;
 }
 
+.helvRegular {
+    font-family: HelveticaNeue;
+}
+.helvMedium {
+    font-family: HelveticaNeueMedium;
+}
+.helvLight {
+    font-family: helveticaneuelight;
+}
+.helvThin {
+    font-family: helveticaneuethin;
+}
+
 .paddingBtmExtra {
     padding-bottom: 80px;
 }
 
 .borderBtm {
-    border-bottom: 1px solid #505b79;
+    border-bottom: 1px solid #a3a3a3;
 }
 
 .borderLft {
-    border-left: 1px solid #505b79;
+    border-left: 1px solid #a3a3a3;
 }
 
 .borderRgt {
-    border-right: 1px solid #505b79;
+    border-right: 1px solid #a3a3a3;
 }
 
 .borderTop {
-    border-top: 1px solid #505b79;
+    border-top: 1px solid #a3a3a3;
 }
 
 .borderTopDot {
-    border-top: 1px dashed #505b79;
+    border-top: 1px dashed #a3a3a3;
 }
 
 .paddingFull {
@@ -120,7 +133,7 @@ ul {
 }
 
 .paddingTB {
-    padding: 20px 0;
+    padding: 25px 0;
 }
 .paddingTBSml {
     padding: 10px 0;
@@ -146,7 +159,8 @@ ul {
 }
 
 .marginLR {
-    margin: 0 30px;
+    margin-left: 35px;
+    margin-right: 35px;
 }
 
 .marginBtm {
@@ -165,7 +179,7 @@ ul {
     margin-top: 10px;
 }
 
-.marginTopShort {
+.marginTopSrt {
     margin-top: 5px;
 }
 
@@ -291,7 +305,7 @@ ul {
 }
 
 .highlight {
-    color: #eb6e00;
+    color: #f15458;
 }
 
 .highlightB {
@@ -391,7 +405,6 @@ ul {
 }
 
 
-
 /*........ Notification .........*/
 .notifications {
     background: #06070b;
@@ -410,17 +423,31 @@ ul {
 }
 
 .notifications .searchBox {
-    border: none;
-}
-.notifications .searchBox input {
+    border: medium none;
+    margin: 0 auto;
+    width: 100%;
+    height: 32px;
     background: #4f5975;
-    color: #ffffff;
+    box-sizing: border-box;
 }
+
+.notifications .searchBox input {
+
+}
+
 .notifications .searchBox .searchBtn {
     background-color: #4894cf;
     width: 50px;
 }
 
+.notifications .clearNotificationsMain {
+
+}
+
+.notifications .clearNotifications {
+    color: #2e76ad;
+    cursor: pointer;
+}
 
 .notifications .notificationList {
 
@@ -431,6 +458,7 @@ ul {
     border-bottom: 1px solid #505b79;
     cursor: pointer;
 }
+
 .notifications .notificationList li.notified {
     background: rgba(79, 89, 117, 0.5);
 }
@@ -442,22 +470,26 @@ ul {
     vertical-align: top;
     width: 32px;
 }
-.notifications .notificationList li .symbol img{
+
+.notifications .notificationList li .symbol img {
     width: 100%;
     display: block;
     height: auto;
 }
+
 .notifications .notificationList li .notificationTxt {
     color: #838f9d;
     width: 205px;
     display: inline-block;
     vertical-align: top;
 }
+
 .notifications .notificationList li .actionBtn {
     padding-top: 15px;
     display: none;
 }
-.notifications .notificationList li .actionBtn .btn{
+
+.notifications .notificationList li .actionBtn .btn {
     width: 70px;
     padding: 4px 0;
     text-align: center;
@@ -466,12 +498,15 @@ ul {
     border-radius: 7px;
     font-size: 13px;
     min-width: 10px;
+    line-height: normal;
 }
-.notifications .notificationList li .actionBtn .btn.notify{
+
+.notifications .notificationList li .actionBtn .btn.notify {
     margin-right: 10px;
     color: #ffffff;
     background: #4894cf;
 }
+
 /*.............. radio ........... */
 .radio {
     position: relative;
@@ -566,14 +601,13 @@ ul {
 
 .dropDown .head,
 .multiSelect .head {
-    background: #2a3046 none repeat scroll 0 0;
+    background: #2a3046 url("../images/arrow_down_white.png") no-repeat right 17px center;
+    background-size: 13px;
     box-sizing: border-box;
-    color: #ffffff;
     cursor: pointer;
-    height: 46px;
-    padding: 0 20px;
+    min-width: 80px;
+    padding: 0 45px 0 20px;
     position: relative;
-    text-align: right;
     border-bottom: 2px solid #2b3041;
 }
 
@@ -605,24 +639,25 @@ ul {
     display: inline-block;
     left: 0;
     line-height: 46px;
-    min-width: 80px;
-    overflow: hidden;
-    padding: 0 51px 0 20px;
-    position: absolute;
-    text-align: left;
     text-overflow: ellipsis;
     vertical-align: middle;
     white-space: nowrap;
     width: 100%;
     cursor: pointer;
-    background: transparent;
-    color: transparent;
-    text-shadow: 0 0 0 #ffffff;
 }
 
 .dropDown.grey .head .headTitle {
     color: #ffffff;
 }
+
+.dropDown.large .head .headTitle {
+    /*width: 250px;*/
+}
+
+.dropDown.medium .head .headTitle {
+    /*width: 175px;*/
+}
+
 .dropDown .head .sign,
 .multiSelect .head .sign {
     display: inline-block;
@@ -635,11 +670,13 @@ ul {
 
 .dropDown .list,
 .multiSelect .list {
+    /*background: #b4b4b4;*/
     background: #1d202f;
     position: absolute;
     left: 0;
     top: 100%;
     width: 100%;
+    /*box-shadow: 0 0 2px rgba(0,0,0,0.3);*/
     display: none;
     z-index: 100;
     max-height: 162px;
@@ -656,6 +693,7 @@ ul {
 
 .dropDown .list li,
 .multiSelect .list li {
+    /*border-bottom: 1px solid #c7c7c7;*/
     border-bottom: 1px solid #363d52;
     cursor: pointer;
     padding: 11px 20px;
@@ -704,25 +742,21 @@ ul {
 /*........ search box .......*/
 .searchBox {
     /*border: 1px solid #dddddd;*/
-    height: 32px;
+    height: 34px;
+    padding-right: 60px;
     position: relative;
+    background: #3c445b;
 }
 
-.searchBox .searchInput {
-    position: absolute;
-    left: 0;
-    right: 50px;
-    height: 100%;
-}
-
-.searchBox .searchInput input {
+.searchBox input {
     display: block;
     width: 100%;
     box-sizing: border-box;
-    padding: 6px 20px;
+    padding: 0;
     height: 100%;
-    background: #3c445b;
-    color: #ffffff;
+    /*color: #ffffff;*/
+    background: transparent;
+    padding-left: 15px;
 }
 
 .searchBox .searchBtn {
@@ -735,6 +769,10 @@ ul {
     top: 0;
     width: 50px;
 }
+
+
+
+
 
 /*........... checkbox .........*/
 .checkboxLabel {
@@ -879,9 +917,9 @@ ul {
     border: none;
     height: 46px;
     line-height: 46px;
-    color: #ffffff;
-    background: #3c445b;
-    border-bottom: 2px solid #2b3041;
+    color: #000;
+    background: #b4b4b4;
+    border-bottom: 2px solid #6a6a6a;
     font-size: 16px;
 }
 
@@ -978,8 +1016,11 @@ ul {
 }
 
 .dataTable .dataRow {
-    border-bottom: 1px solid #505b79;
+    /*border-bottom: 1px solid #505b79;*/
     display: block;
+}
+.dataTable .dataRow:nth-child(even){
+    background: #f5f5f5;
 }
 .dataTable.full .dataRow.header {
     background: #222737 none repeat scroll 0 0;
@@ -1008,7 +1049,7 @@ ul {
     table-layout: fixed;
     width: 100%;
     /*background: #ffffff;*/
-    padding: 20px 0;
+    padding: 20px;
 }
 
 .dataTable .rowCont li {
@@ -1059,25 +1100,6 @@ ul {
     margin-right: 0;
 
 }
-/*...... search box ........*/
-.searchBox {
-    width: 250px;
-    border: none;
-    background: #2b3042;
-}
-
-.searchBox input {
-    color: #ffffff;
-    background-color: transparent;
-    padding: 8px 15px;
-    width: 82%;
-}
-
-.searchBox .searchBtn {
-    background-color: transparent;
-    width: 18%;
-}
-
 /*....... disable map links and options .......*/
 a[href^="http://maps.google.com/maps"] {
     display: none !important
@@ -1554,9 +1576,10 @@ a[href^="https://maps.google.com/maps"] {
     padding: 9px 25px;
     text-align: center;
     border: none;
-    height: 40px;
+    /*height: 40px;*/
     position: relative;
     font-size: 15px;
+    box-shadow: 0 2px 2px 0 rgba(156, 39, 176, 0.14), 0 3px 1px -2px rgba(156, 39, 176, 0.2), 0 1px 5px 0 rgba(156, 39, 176, 0.12);
 }
 .btn.small {
     font-size: 14px;
@@ -1696,13 +1719,15 @@ a[href^="https://maps.google.com/maps"] {
     border-radius: 0;
     padding: 0;
     padding-bottom: 10px;
-    background: #3c445b;
+    background: #ffffff;
+    box-shadow: 0 0 2px rgba(0,0,0,0.2);
+    position: relative;
 }
 
 #ui-datepicker-div .ui-datepicker-header {
     border-radius: 0;
     padding: 10px 7.5%;
-    background: #ef4b42;
+    background: #a6a6a6;
     border: none;
     font-family: robotolight;
     font-size: 16px;
@@ -1734,7 +1759,7 @@ a[href^="https://maps.google.com/maps"] {
 .ui-datepicker table {
     margin: 0 auto;
     width: 92%;
-    color: #ffffff;
+    color: #3e3e3e;
 }
 
 .ui-datepicker th {
@@ -1764,10 +1789,91 @@ a[href^="https://maps.google.com/maps"] {
 
 .ui-datepicker td .ui-state-highlight,
 .ui-datepicker td .ui-state-highlight.ui-state-active {
-    background: #ef4b42;
+    background: #f15458;
 }
 
 .ui-datepicker td .ui-state-active {
     background: rgba(116, 133, 176, 0.71);
 }
 
+
+
+
+.ripple-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+.ripple {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin-left: -10px;
+    margin-top: -10px;
+    border-radius: 100%;
+    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: scale(1);
+    transform-origin: 50%;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.ripple.ripple-on {
+    transition: opacity 0.15s ease-in 0s, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+    opacity: 0.1;
+    transform: scale(15);
+}
+
+.ripple.ripple-out {
+    transition: opacity 0.1s linear 0s !important;
+    opacity: 0;
+}
+
+.rippleEle{
+    overflow: hidden;
+    position: relative;
+}
+.rippleEle .rippleContainer{
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.rippleEle .rippleContainer .ripple{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    transform: scale(0);
+    transform-origin: 50%;
+    opacity: 0;
+}
+.rippleEle .rippleContainer .ripple.on{
+    transform: scale(3);
+    opacity: 0.2;
+    transition: opacity 0.15s ease-in 0s, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+}
+.rippleEle .rippleContainer .ripple.off{
+    transform: scale(0);
+    opacity: 0;
+    transition: all 100ms;
+}
+/*.rippleEle:after{*/
+    /*content: "";*/
+/*}*/
+/*.rippleEle.on:after{*/
+    /*transform: scale(3);*/
+    /*opacity: 0.4;*/
+    /*transition: all 200ms ease-in;*/
+/*}*/
