@@ -9,7 +9,8 @@ var NEC = angular.module("NEC", dependencies);
 NEC.config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider.state('admin', {
         url: "/admin",
-        templateUrl: 'templates/credentials/admin.html'
+        templateUrl: 'templates/credentials/admin.html',
+        controller: 'loginCtrl'
     })
         .state('admin.signIn', {
             url: "/signIn",
