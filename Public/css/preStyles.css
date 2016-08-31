@@ -405,6 +405,7 @@ ul {
 }
 
 
+
 /*........ Notification .........*/
 .notifications {
     background: #06070b;
@@ -454,34 +455,21 @@ ul {
 }
 
 .notifications .notificationList li {
-    padding: 18px 5px;
+    padding: 18px 10px 18px 55px;
     border-bottom: 1px solid #505b79;
     cursor: pointer;
+    background: url("../images/notif_active.png") no-repeat left 10px top 21px;
+    background-size: 30px;
 }
 
 .notifications .notificationList li.notified {
-    background: rgba(79, 89, 117, 0.5);
+    background-color: rgba(79, 89, 117, 0.5);
+    background-image: url("../images/notif_inactive.png");
 }
 
-.notifications .notificationList li .symbol {
-    display: inline-block;
-    margin-right: 12px;
-    margin-top: 9px;
-    vertical-align: top;
-    width: 32px;
-}
-
-.notifications .notificationList li .symbol img {
-    width: 100%;
-    display: block;
-    height: auto;
-}
 
 .notifications .notificationList li .notificationTxt {
     color: #838f9d;
-    width: 205px;
-    display: inline-block;
-    vertical-align: top;
 }
 
 .notifications .notificationList li .actionBtn {
@@ -506,7 +494,6 @@ ul {
     color: #ffffff;
     background: #4894cf;
 }
-
 /*.............. radio ........... */
 .radio {
     position: relative;
@@ -1081,6 +1068,7 @@ ul {
 
 .pagination li {
     display: inline-block;
+    vertical-align: middle;
     font-size: 15px;
     line-height: 35px;
     width: 35px;
@@ -1094,6 +1082,16 @@ ul {
 .pagination li.active {
     background: #ef4b42;
     color: #ffffff;
+}
+
+.pagination li.prev ,
+.pagination li.next {
+    height: 35px;
+    background: #ef4b42 url(../images/leftArrowWhite.png) no-repeat center;
+    background-size: 16px;
+}
+.pagination li.next {
+    background-image: url(../images/rightArrowWhite.png);
 }
 
 .pagination li:last-of-type {
