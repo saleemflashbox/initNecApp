@@ -2,34 +2,34 @@
  * Created by MohammedSaleem on 11/11/15.
  */
 
-var dependencies = ['ui.router'];
+var dependencies = ['ui.router','circularLoaderUI','hrLoaderUI'];
 
 var NEC = angular.module("NEC", dependencies);
 
 NEC.config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider.state('admin', {
         url: "/admin",
-        templateUrl: 'templates/credentials/admin.html',
+        templateUrl: 'credentials/admin.html',
         controller: 'loginCtrl'
     })
         .state('admin.signIn', {
             url: "/signIn",
-            templateUrl: 'templates/credentials/signIn.html'
+            templateUrl: 'credentials/signIn.html'
         })
         .state('admin.signUp', {
             url: "/signUp",
-            templateUrl: 'templates/credentials/signUp.html'
+            templateUrl: 'credentials/signUp.html'
         })
         .state('app', {
             url: "/app",
             templateUrl: 'templates/app.html'
         })
-        .state('app.test', {
-            url: "/test",
-            templateUrl: 'templates/test.html'
+        .state('app.dashboard', {
+            url: "/dashboard",
+            templateUrl: 'templates/dashboard.html'
         });
 
-    $urlRouterProvider.otherwise("/app/test");
+    $urlRouterProvider.otherwise("/app");
 });
 
 

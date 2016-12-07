@@ -4,11 +4,11 @@ html, body {
 }
 
 body {
-    color: #ffffff;
+    color: #222222;
     margin: 0;
     padding: 0;
     font-family: robotoregular;
-    background: #161825;
+    background: #f3f4f9;
     overflow-x: hidden;
 }
 
@@ -24,17 +24,18 @@ body {
 
 /*....... App header ........*/
 #appHeader{
-    /*box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);*/
-    padding: 30px 50px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    padding: 25px 50px;
     position: relative;
     z-index: 200;
-    background: #1a1e2a;
+    background: #ffffff;
 }
 #appHeader .leftCont{
 
 }
 #appHeader .logo{
     width: 70px;
+    margin-top: 6px;
 }
 #appHeader .logo img{
     height: auto;
@@ -55,7 +56,7 @@ body {
     padding: 6px 12px;
 }
 #appHeader .notificationBtn .num{
-    border-left: 2px solid #1a1e2b;
+    border-left: 2px solid #ffffff;
 }
 
 
@@ -71,7 +72,7 @@ body {
 
 .loginMain .logTitle {
     /*color: #122536;*/
-    color: #ffffff;
+    /*color: #ffffff;*/
 }
 .loginMain .form li {
     margin-bottom: 20px;

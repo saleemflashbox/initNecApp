@@ -3,14 +3,14 @@
 }
 
 a {
-    color: #ffffff;
+    color: #222222;
     text-decoration: none;
     outline: medium none;
 }
 
 input {
     border: none;
-    color: #ffffff;
+    color: #222222;
     font-family: robotolight;
     outline: none;
 }
@@ -121,22 +121,25 @@ ul {
 }
 
 .paddingFull {
-    padding: 25px 35px;
+    padding: 20px 30px;
 }
 
 .paddingLR {
-    padding: 0 35px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .paddingRgt {
-    padding-right: 20px;
+    padding-right: 30px;
 }
 
 .paddingTB {
-    padding: 25px 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 .paddingTBSml {
-    padding: 10px 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .paddingTop {
@@ -159,8 +162,8 @@ ul {
 }
 
 .marginLR {
-    margin-left: 35px;
-    margin-right: 35px;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 .marginBtm {
@@ -220,11 +223,13 @@ ul {
 }
 
 .marginTB {
-    margin: 15px 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .marginTBSml {
-    margin: 10px 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .centerTxt {
@@ -347,8 +352,8 @@ ul {
     top: 0;
     height: 100%;
     width: 90px;
-    background: #06070b;
-    box-shadow: -3px 0 3px #06070b inset;
+    background: #ffffff;
+    box-shadow: 1px 0 2px rgba(0, 0, 0, 0.2)
 }
 
 #contWrapper .sideNav {
@@ -408,9 +413,9 @@ ul {
 
 /*........ Notification .........*/
 .notifications {
-    background: #06070b;
+    background: #ffffff;
     bottom: 0;
-    box-shadow: 2px -3px 3px rgba(0, 0, 0, 0.2) inset;
+    box-shadow: -1px 0px 2px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
     font-family: robotoregular;
     overflow: auto;
@@ -424,22 +429,14 @@ ul {
 }
 
 .notifications .searchBox {
-    border: medium none;
-    margin: 0 auto;
     width: 100%;
-    height: 32px;
-    background: #4f5975;
-    box-sizing: border-box;
+    height: 35px;
 }
 
 .notifications .searchBox input {
 
 }
 
-.notifications .searchBox .searchBtn {
-    background-color: #4894cf;
-    width: 50px;
-}
 
 .notifications .clearNotificationsMain {
 
@@ -455,21 +452,33 @@ ul {
 }
 
 .notifications .notificationList li {
-    padding: 18px 10px 18px 55px;
-    border-bottom: 1px solid #505b79;
+    padding: 18px 10px 18px 10px;
+    border-bottom: 1px solid #d0d0d0;
     cursor: pointer;
-    background: url("../images/notif_active.png") no-repeat left 10px top 21px;
-    background-size: 30px;
+    position: relative;
 }
 
 .notifications .notificationList li.notified {
     background-color: rgba(79, 89, 117, 0.5);
-    background-image: url("../images/notif_inactive.png");
+}
+.notifications .notificationList li .symbol {
+    width: 50px;
+    display: inline-block;
+    vertical-align: top;
+}
+.notifications .notificationList li .symbol img{
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 
 .notifications .notificationList li .notificationTxt {
     color: #838f9d;
+    display: inline-block;
+    vertical-align: top;
+    width: 200px;
+    margin-left: 5px;
 }
 
 .notifications .notificationList li .actionBtn {
@@ -730,9 +739,10 @@ ul {
 .searchBox {
     /*border: 1px solid #dddddd;*/
     height: 34px;
-    padding-right: 60px;
+    padding-right: 50px;
     position: relative;
-    background: #3c445b;
+    background: #f3f4f9;
+    box-sizing: border-box;
 }
 
 .searchBox input {
@@ -747,14 +757,14 @@ ul {
 }
 
 .searchBox .searchBtn {
-    background: url("../images/searchIcon.png") no-repeat center #4894cf;
+    background: url("../images/searchIcon.png") no-repeat center;
     background-size: 16px;
     cursor: pointer;
     height: 100%;
     position: absolute;
     right: 0;
     top: 0;
-    width: 50px;
+    width: 40px;
 }
 
 
@@ -1577,7 +1587,6 @@ a[href^="https://maps.google.com/maps"] {
     /*height: 40px;*/
     position: relative;
     font-size: 15px;
-    box-shadow: 0 2px 2px 0 rgba(156, 39, 176, 0.14), 0 3px 1px -2px rgba(156, 39, 176, 0.2), 0 1px 5px 0 rgba(156, 39, 176, 0.12);
 }
 .btn.small {
     font-size: 14px;
@@ -1868,10 +1877,10 @@ a[href^="https://maps.google.com/maps"] {
     transition: all 100ms;
 }
 /*.rippleEle:after{*/
-    /*content: "";*/
+/*content: "";*/
 /*}*/
 /*.rippleEle.on:after{*/
-    /*transform: scale(3);*/
-    /*opacity: 0.4;*/
-    /*transition: all 200ms ease-in;*/
+/*transform: scale(3);*/
+/*opacity: 0.4;*/
+/*transition: all 200ms ease-in;*/
 /*}*/

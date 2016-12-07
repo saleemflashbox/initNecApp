@@ -1,7 +1,7 @@
 <div id="appHeader">
     <div class="leftCont floatLeft">
         <div class="logo">
-            <img src="images/NEC_Logo.png" alt="" class="nec midBlock">
+            <img src="images/nec_logo.png" alt="" class="nec midBlock">
         </div>
     </div>
     <div class="rightCont floatRight roboLight">
@@ -20,20 +20,39 @@
     <!--........ Side navigation bar ......-->
     <div class="sideNavMain">
         <ul class="sideNav roboLight smallest">
-            <li ng-class="{active: currentRout('necApp/overview')}" ng-click="setPageCode('Overview')" class="rippleEle">
-                <a href="#/necApp/overview">
-                    <img src="images/overview_inActive.png" alt="" class="icon inactive">
-                    <img src="images/overview_active.png" alt="" class="icon active">
-
-                    <div class="name">Overview</div>
+            <li ng-class="{active: currentRout('app/dashboard')}" class="rippleEle">
+                <a href="#/app/overview">
+                    <img src="images/Dashboard_Inactive.png" alt="" class="icon inactive">
+                    <img src="images/Dashboard_Active.png" alt="" class="icon active">
+                    <div class="name">Dashboard</div>
                 </a>
             </li>
-            <li ng-class="{active: currentRout('necApp/sensorMain')}" ng-click="setPageCode('Sensors')" class="rippleEle">
-                <a href="#/necApp/sensorMain/sensors">
-                    <img src="images/sensors_inActive.png" alt="" class="icon inactive">
-                    <img src="images/sensors_active.png" alt="" class="icon active">
-
-                    <div class="name">Sensors</div>
+            <li ng-class="{active: currentRout('app/canvas')}" class="rippleEle">
+                <a href="#/app/canvas">
+                    <img src="images/canvas_inActive.png" alt="" class="icon inactive">
+                    <img src="images/canvas_active.png" alt="" class="icon active">
+                    <div class="name">Canvas</div>
+                </a>
+            </li>
+            <li ng-class="{active: currentRout('app/watchlist')}" class="rippleEle">
+                <a href="#/app/watchlist">
+                    <img src="images/watchList_Inactive.png" alt="" class="icon inactive">
+                    <img src="images/watchList_Active.png" alt="" class="icon active">
+                    <div class="name">Watchlist</div>
+                </a>
+            </li>
+            <li ng-class="{active: currentRout('app/reports')}" class="rippleEle">
+                <a href="#/app/reports">
+                    <img src="images/watchList_Inactive.png" alt="" class="icon inactive">
+                    <img src="images/watchList_Active.png" alt="" class="icon active">
+                    <div class="name">Reports</div>
+                </a>
+            </li>
+            <li ng-class="{active: currentRout('app/settings')}" class="rippleEle">
+                <a href="#/app/settings">
+                    <img src="images/settings_inActive.png" alt="" class="icon inactive">
+                    <img src="images/settings_active.png" alt="" class="icon active">
+                    <div class="name">Settings</div>
                 </a>
             </li>
         </ul>
@@ -54,7 +73,7 @@
         <ul class="notificationList">
             <li data-init="0">
                 <div class="symbol">
-                    <img src="images/yellowTri.png">
+                    <img src="images/person1.png">
                 </div>
                 <div class=" notificationTxt small">
                     <div class="">APN to device connection</div>
@@ -70,7 +89,7 @@
             </li>
             <li data-init="0">
                 <div class="symbol">
-                    <img src="images/greenTri.png">
+                    <img src="images/person2.png">
                 </div>
                 <div class=" notificationTxt small">
                     <div class="">Generated device ID</div>
@@ -86,7 +105,7 @@
             </li>
             <li data-init="0">
                 <div class="symbol">
-                    <img src="images/redTri.png">
+                    <img src="images/person3.png">
                 </div>
                 <div class=" notificationTxt small">
                     <div class="">New sensor (Camera) added</div>
@@ -102,7 +121,7 @@
             </li>
             <li data-init="0">
                 <div class="symbol">
-                    <img src="images/greenTri.png">
+                    <img src="images/person4.png">
                 </div>
                 <div class=" notificationTxt small">
                     <div class="">Generated device ID</div>
